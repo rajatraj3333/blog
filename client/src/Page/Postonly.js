@@ -9,7 +9,7 @@ import {AiFillEdit,AiFillDelete} from 'react-icons/ai'
 import {FcLike} from 'react-icons/fc'
 import NewNav from '../Component/NewNav'
 import { useDispatch, useSelector } from 'react-redux'
-import { initialpost,
+import { 
      createpostcomment,
      deletecomment,
      addliketopost,
@@ -25,7 +25,7 @@ const dispatch = useDispatch()
 const location = useLocation();
 const {userdetails,isLoggin}=useSelector(state=>state.user)
 const {allpost} =useSelector(state=>state.post)
-   const {post }=location.state
+const {post }=location.state
 const [commentupdate,Setcommentupdate]=useState('')
 console.log(commentupdate)
 const [postpageview,Setpostpageview]=useState('')
@@ -135,9 +135,9 @@ console.log(res)
 
    return (
    <>
-       <div className="container mx-auto"> 
+       <div className=""> 
 <NewNav/>
-<div className="md:flex md:flex-row flex flex-col"> 
+<div className="md:flex md:flex-row flex flex-col m-4"> 
 
  
 <div className=" w-full md:basis-3/4">

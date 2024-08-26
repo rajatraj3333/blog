@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { postlike,removelike} from '../redux/reducers/postSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import {FcLike} from 'react-icons/fc'
-
+import './css/post.css'
 function Post() {
 
 const dispatch = useDispatch();    
@@ -62,19 +62,21 @@ return (
 
 allpost.map((post,i)=>( 
 
-<div className="  md:w-[31%]  w-full m-2   " key={post._id}>
-<div className="" key={post._id}>
-    <h1>{post.title}</h1>
-    <img src={post.image} alt={post.title} className=" md:my-mx-2  h-44  w-full md:w-96 md:h-64 rounded-lg  "/>
+<div className="  md:w-[31%]  w-full m-2 
+  post-container" key={post._id}>
+<div  key={post._id}>
+    <h1 className="post-title post-title-container">{post.title}</h1>
+    <img src={post.image} alt={post.title} className=" md:my-mx-2 mb-2  h-44  w-full md:w-96 md:h-64 rounded-lg post-img
+     "/>
+   <span className='post-tag'>{post.tag}</span> 
      
-    <h3 className='text-2xl'>{post.description.substr(0,64)} </h3>
-    <p className='text-lg'>{post.content.substr(0,96)}</p>
-   <span>{post.tag}</span> 
+    <h3 className='text-2xl post-desc post-title-container'>{post.description.substr(0,64)} </h3>
+    <p className='text-lg post-content mt-4 mb-4'>{post.content.substr(0,96)}</p>
 
 
 </div>
 <div className='flex items-center  justify-evenly space-x-8'>
-<button className="md:p-4 p-3 text-center bg-pinkred rounded-lg text-white hover:text-black hover:bg-gray-300 m-2 " onClick={()=>navigate('/postonly',{state:{post}})}>Read More</button>    
+<button className="read-more-post" onClick={()=>navigate('/postonly',{state:{post}})}>Read More</button>    
 <span className=' flex space-x-8 '>
 <BsFillEyeFill/>
 <p>{post.pageview}</p>

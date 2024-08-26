@@ -1,0 +1,46 @@
+.read-more{
+    background-color: rgba(243, 105, 98, 0.717);
+    color: white;
+    padding:5px 6px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.edit{
+    background-color: rgba(21, 27, 205, 0.653);
+    padding:6px 18px;
+    margin-left: 10px;
+    border-radius: 4px;
+
+}
+
+.delete{
+    padding:6px 18px;
+    background-color: red;
+    margin-left: 10px;
+    border-radius: 4px;
+
+}
+.post-title{
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.post-desc{
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.post-content{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style:normal;
+}

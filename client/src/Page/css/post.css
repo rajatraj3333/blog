@@ -1,0 +1,36 @@
+.post-container{
+    /* border:  1px solid red; */
+}
+
+.post-title-container{
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.read-more-post{
+background-color: rgba(227, 43, 110, 0.617);
+padding:6px 8px;
+border-radius: 6px;
+color: white;
+margin-top: 10px;
+}
+.read-more-post:hover{
+background-color: rgba(200, 103, 139, 0.617);
+color: black;
+}
+
+.post-tag{
+    background-color: hsla(140, 60%, 40%, 0.33);
+    border-radius:6px;
+    padding: 2px;
+}
+
+
+
+@media (max-width:600px){
+    .post-container{
+        margin-left: 0;
+        padding:0px 15px;
+    }
+}

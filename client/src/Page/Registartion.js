@@ -1,12 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import api from '../utils/api';
 import { useSelector,useDispatch } from 'react-redux';
 import { setalert,removealert } from '../redux/reducers/alertSlice';
 import { setauth } from '../utils/setauth';
 import { fetchuserdata } from '../redux/reducers/userSlice';
 import { useNavigate } from 'react-router-dom';
+import "./css/register.css";
+import Notification from '../Component/Notification';
 
 function Registartion() {
+    const [open,setOpen]=useState(false);
 
 const {type,message}=useSelector(state=>state.alert)
 const navigate = useNavigate()
@@ -38,14 +41,15 @@ try {
         localStorage.setItem('token',res.data.token);
         setauth(localStorage.token);   
         dispatch(fetchuserdata());
-
+        setOpen(true);
         dispatch(setalert({message:'Successfully regsitered',type:'bg-success'}))
        setTimeout(()=>{
         navigate('/')
        },3000)
     }
     else{
-        dispatch(setalert({message:'Invalid credential',type:'bg-danger'}))
+        setOpen(true);
+        dispatch(setalert({message:'User Already Exist',type:'bg-danger'}))
     }  
                
 } catch (error) {
@@ -68,33 +72,45 @@ finally{
     return (
 
 <>
+<div className="login-wrapper">
+        {/* <p  id="alertsucess" className=' hidden bg-success w-2/6 mx-auto '>sucessfully login...</p>
+         */}
+        {/* <p id="alert" className={`w-3/6 ${type} mx-auto h-14 text-center`}> */}
+        {/* <p id="alert">{message}</p> */}
+        {open && message &&  <Notification message={message} type={type} setOpen={setOpen} /> }
 
 
+<div className="login_side">
 
-<div className=" container mx-auto  flex-col md:flex h-screen">
-    <span  id="alert" className={`w-3/6 ${type} mx-auto h-14 text-center`}>{message}</span>
-        
-    
-    <div className="flex justify-end md:mt-4 m-2"> 
-        <button className="pl-6 pr-6 pb-3 pt-3 text-white bg-pinkred rounded-lg "><a href="index.html">BlogN*</a></button>
-        
+<div className="Title">
+        <a href="/">
+        <img src="./img/logo.png"/>
+        </a>
     </div>
-        
-    <div className=" flex loginh2 justify-center "><h1 className="text-3xl text-bold">Register</h1></div>
-        <div className="   m-auto md:w-1/2 w-3/4 bg-gray-100 rounded-lg h-96">
-    
-    <form action="" onSubmit={handlesubmit} className="  space-y-4  m-3 flex justify-center items-center flex-col " >
-        <input type="text"  name="username" id="1" className=" border-2 rounded-lg border-red h-9 mt-9 md:w-3/4 w-full placeholder:text-2xl placeholder:text-gray-500 " placeholder="    Username"/>
-        <input type="email" name="email" id="2" className=" border-2 border-red rounded-lg h-9 md:w-3/4 w-full placeholder:text-2xl placeholder:text-gray-500 " placeholder="Email"/>
-        <input type="password" name="password" id="3" className=" border-2 border-red rounded-lg h-9 md:w-3/4 w-full placeholder:text-2xl  placeholder:text-gray-500 " placeholder="    Password"/>
-        <input type="password" name="passwordrepeat" id="4" className=" border-2 border-red rounded-lg h-9 md:w-3/4 w-full placeholder:text-2xl placeholder:text-gray-500 " placeholder="    Re-Password"/>
-        <button className="px-9 py-3.5 hover:bg-gray-300  hover:text-black text-white bg-pinkred rounded-lg ">Submit</button>
-        
-    </form>
 
-    </div>
-    
+
+        <div className="rgstr-form">
+        <form action="" onSubmit={handlesubmit} className="forms" >
+        <input type="text"  name="username" id="1"  placeholder="Username"/>
+        <input type="email" name="email" id="2"  placeholder="Email"/>
+        <input type="password" name="password" id="3"  placeholder="Password"/>
+        <input type="password" name="passwordrepeat" id="4"  placeholder="Re-Password"/>
+        <p className="account_create">
+                Already have Account? <a href="./login">Login now</a>
+               </p>
+        <button id="btn" className="formbtn">Signup</button>
+        </form>
+
         </div>
+      </div>
+      <div className="login_image">
+        <img src="./img/a-captivating-image-of-a-person-typing-away-on-a-l.jpeg" />
+       </div>
+      </div>
+
+
+  
+  
     
 
 

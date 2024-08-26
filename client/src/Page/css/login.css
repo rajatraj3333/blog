@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.login-wrapper {
+  /* border:  2px solid red; */
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+z-index: 1;
+}
+
+.formbtn {
+  background-color: hsla(113, 66%, 51%, 0.546);
+  padding: 8px;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.login_side {
+  display: flex;
+  margin: 5px;
+  flex: 0 0 40%;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.login_image {
+  display: flex;
+  margin: 5px;
+  flex: 0 0 60%;
+  flex-direction: column;
+}
+
+.email {
+  border: none;
+  margin-top: 10px;
+  border-bottom: 2px solid hsla(180, 1%, 29%, 0.652);
+}
+
+.pass {
+  margin-top: 20px;
+  border-bottom: 2px solid hsla(180, 1%, 29%, 0.652);
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  justify-content: center;
+  margin-top: 20vh;
+}
+input::placeholder {
+  font-size: 15px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.formbtn {
+  margin-top: 25px;
+}
+input:focus {
+  outline: none;
+}
+.Title {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 28px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+}
+.Title img{
+    width: 180px;
+    height: 180px;
+    position:relative;
+    margin-top: -70px;
+    /* border: 1px solid slateblue; */
+}
+.account_create{
+    margin-top: 10px;
+}
+.account_create a{
+text-decoration: underline;
+color: blue;
+}
+.account_create a:hover{
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:600px) {
+    .login-wrapper{
+        display: flex;
+        border: 1px solid green;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}

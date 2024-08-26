@@ -1,0 +1,46 @@
+.nav-menu{
+    background-color: hsla(210, 4%, 10%, 0.854);
+    color: white;
+    padding: 6px;
+}
+.navBtn{
+    padding:4px 10px;
+    background-color: hsla(113, 66%, 51%, 0.546);
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+}
+.navBtn:hover{
+    background-color: hsla(113, 58%, 67%, 0.763);
+
+}
+.nav_link:hover{
+text-decoration: underline;
+}
+.login-nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+   
+}
+
+.footer{
+    background-color: hsla(180, 3%, 8%, 0.854);
+}
+
+
+.footer-nav li a:hover{
+text-decoration: underline;
+
+}
+
+@media  (max-width:600px) {
+    .navBtn{
+        margin-top: 10px;
+    }
+  
+}

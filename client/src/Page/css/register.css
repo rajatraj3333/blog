@@ -1,0 +1,18 @@
+.rgstr-form input{
+    border:none;
+  border-bottom: 2px solid hsla(180, 1%, 29%, 0.652);
+  width: 100%;
+  margin-top: 20px;
+ }
+
+.rgstr-form input:focus{
+    outline: none;
+}
+
+.rgstr-form input::placeholder{
+    font-size: 15px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}

@@ -52,7 +52,7 @@ else{
 
 
   return (
-    <div className="container mx-auto">
+    <div className="">
 
     <Router>
 

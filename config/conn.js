@@ -3,7 +3,7 @@ const { default: mongoose } = require("mongoose")
 function connectionestablished (){
 
     let URI= process.env.MONGO_URI
-
+    console.log(URI);
 
     try {
         mongoose.set('strictQuery',false)

@@ -7,7 +7,7 @@ const auth =require('../Controller/auth')
 
 
 Route.post('/register',async (req,res)=>{
-  
+console.log(req.body);  
 const resp=await Registeruser(req.body)
 
 if(resp.hasOwnProperty('token')) res.cookie("token",resp.token)

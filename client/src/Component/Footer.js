@@ -4,11 +4,11 @@ function Footer() {
   return (
    <>
    
-<footer className=" bg-darkblue mt-4">
+<footer className=" bg-darkblue mt-4 footer">
     <div className="container mx-auto flex flex-col  items-center md:flex  md:flex-row-reverse justify-between"> 
     <div className="flex  sm:flex sm:flex-col  ">
             <div className="address flex mt-4 mb-4">
-    <ul className="text-white text-lg text-bold">
+    <ul className="text-white text-lg text-bold footer-nav">
         <h1 className="text-2xl">Social  Link</h1>
 
         <li><a href="#">Facebook</a></li>
@@ -25,7 +25,7 @@ function Footer() {
     
         <div className="sociallink flex mt-4 mb-4">
     
-            <ul className="text-white text-lg text-bold">
+            <ul className="text-white text-lg text-bold footer-nav">
                 <h1 className="text-2xl">Usefull  Link</h1>
     
                 <li><a href="#">Carrer</a></li>
