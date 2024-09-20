@@ -5,11 +5,11 @@
   "main": "index.js",
   "homepage": "./",
   "scripts": {
-    "start": "node  index.js",
+    "start": "node  index.js", 
     "server": "nodemon index.js",
     "client": " npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install --prefix client && npm run build --prefix client"
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
