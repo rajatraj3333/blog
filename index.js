@@ -2,8 +2,11 @@ const express  = require('express');
 
 const app = express();
 const path = require('path')
+const cors = require('cors');
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+app.use(cors());
 const fileUpload = require('express-fileupload');
 app.use(fileUpload())
 const connecttodb =require('./config/conn')
@@ -15,6 +18,10 @@ const auth = require('./Routes/auth')
 const userRoute= require('./Routes/userRoute')
 const postRoute = require('./Routes/postRoute')
 const fileRoute = require('./Routes/fileroute')
+app.get('/test',(req,res)=>{
+  console.log('response setup');
+  res.send('abcd')
+})
 app.use('/api/user',userRoute) 
 app.use('/api/post',postRoute)
 app.use('/api/auth',auth)
@@ -24,6 +31,9 @@ app.post('/api/test/',(req,res)=>{
   console.log(req.body)
   res.send(req.body)
 })
+
+
+
 
 app.post('/api/file/upload', function(req, res) {
 
@@ -59,9 +69,8 @@ app.post('/api/file/upload', function(req, res) {
 })
 
 console.log(__dirname);
-console.log(express.static(path.join(__dirname, '/client/build')))
 
-console.log(path.join(__dirname, '/client/build'));
+
 //  app.use(express.static('./client/build'));
 // if(process.env.NODE_ENV === 'production'){
 //  app.use(express.static('client/build'));
@@ -70,6 +79,20 @@ console.log(path.join(__dirname, '/client/build'));
 //   res.sendFile(path.resolve(__dirname,'client', 'build', 'index.html'));
 //  })
 // }
+
+// app.use(express.static(path.join(__dirname, '../../testapp/build')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
+// });
+
+console.log(process.env.NODE_ENV==='production',process.env.NODE_ENV)
+
+if (process.env.NODE_ENV==='production') {
+  app.use(express.static(path.join(__dirname, './client/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+  });
+}
 
 
 const PORT = process.env.PORT || 5000;
